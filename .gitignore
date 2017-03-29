@@ -7,3 +7,7 @@ docs/
 *.rar
 *.zip
 *.log
+#忽略vscode
+.vscode/
+#忽略dist文件夹
+dist/

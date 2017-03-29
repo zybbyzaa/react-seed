@@ -27,7 +27,7 @@ module.exports = merge(baseWebpackConfig, {
                         loader: 'url',
                         options: {
                             name: utils.assetsPath('images','[name].[hash].[ext]'),
-                            publicPath: '../',
+                            publicPath: '/',
                             limit: 8192
                         }
                     }

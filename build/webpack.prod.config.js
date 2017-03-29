@@ -27,7 +27,7 @@ var webpackConfig = merge(baseWebpackConfig, {
                         loader: 'url',
                         options: {
                             name: utils.assetsPath('images','[name].[hash].[ext]'),
-                            publicPath: '../',
+                            publicPath: '/',
                             limit: 8192
                         }
                     },
@@ -35,18 +35,22 @@ var webpackConfig = merge(baseWebpackConfig, {
                         loader: 'image-webpack',
                         query: {
                             progressive: true,
-                            optimizationLevel: 7,
-                            interlaced: false,
+                            optipng: {
+                              optimizationLevel: 7
+                            },
                             pngquant: {
                                 quality: '65-90',
                                 speed: 4
+                            },
+                            gifsicle: {
+                              interlaced: false
                             },
                             mozjpeg: {
                                 quality: 65
                             }
                         }
                     }
-                ] 
+                ]
             }
         ]
     },

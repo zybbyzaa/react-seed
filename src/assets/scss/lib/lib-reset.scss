@@ -201,6 +201,11 @@ select { // 2
     overflow: visible;
 }
 
+input, button, textarea, select {
+    *font-size: 100%;
+    -webkit-appearance:none;
+}
+
 // Address inconsistent `text-transform` inheritance for `button` and `select`.
 // All other form control elements do not inherit `text-transform` values.
 // Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.

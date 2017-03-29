@@ -19,6 +19,7 @@
     </script>
 
     <% var contentPath = "${rc" + ".contextPath}"%>
+    <% var cssFile = htmlWebpackPlugin.files.css %>
     <% cssFile.forEach(function(css){ %>
     <link rel="stylesheet" href="<%- contentPath + css %>">
     <% }) %>
