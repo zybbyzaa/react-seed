@@ -84,8 +84,8 @@ module.exports = {
     },
     postcssOption: function(){
         return [
-            autoprefixer({ 
-                browsers: postcssConfig.autoprefixer[config.platform] 
+            autoprefixer({
+                browsers: postcssConfig.autoprefixer[config.platform]
             }),
             pxtorem(postcssConfig.postcssPxtorem),
             sprites(postcssConfig.postcssSprites)

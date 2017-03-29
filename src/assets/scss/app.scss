@@ -3,8 +3,19 @@
 @import './lib/lib-reset';
 @import './lib/lib-help';
 
-#root
-{
+#root {
     height: 100%;
     min-height: 100%;
+}
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 7.5rem;
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+
+    background-color: nth($colorBg,2);
 }

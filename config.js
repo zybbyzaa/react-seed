@@ -10,7 +10,7 @@ module.exports = {
         },
         port: 8090,
         autoOpenBrowser: true,
-        assetsPublicPath: '/',  
+        assetsPublicPath: '/',
         proxyTable: {
         },
         template: path.join(__dirname, './tpl/dev.template.html')

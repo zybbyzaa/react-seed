@@ -10,6 +10,7 @@ module.exports = {
   extends: 'airbnb-base',
   // required to lint *.js files
   plugins: [
+    'react',
     'html'
   ],
   // check if imports actually resolve
@@ -26,6 +27,11 @@ module.exports = {
     'import/extensions': ['error', 'always', {
       'js': 'never'
     }],
+    "no-unused-vars": ["off"],
+    "class-methods-use-this": ["off"],
+    "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
+    "no-unused-expressions": ["off"],
+    "arrow-body-style": ["error", "always"],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
