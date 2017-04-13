@@ -24,19 +24,19 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.js$/,
-        enforce: 'pre',
-        include: [resolve('src')],
-        use: [
-          {
-            loader: 'eslint',
-            options: {
-              formatter: require('eslint-friendly-formatter')
-            }
-          }
-        ]
-      },
+      // {
+      //   test: /\.js$/,
+      //   enforce: 'pre',
+      //   include: [resolve('src')],
+      //   use: [
+      //     {
+      //       loader: 'eslint',
+      //       options: {
+      //         formatter: require('eslint-friendly-formatter')
+      //       }
+      //     }
+      //   ]
+      // },
       {
         test: /\.js$/,
         exclude: /node_modules/,

@@ -2,10 +2,16 @@ module.exports = {
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
-    sourceType: 'module'
+    ecmaVersion: 2017,
+    sourceType: 'module',
+    ecmaFeatures: {
+      experimentalObjectRestSpread: true,
+    }
   },
   env: {
     browser: true,
+    es6: true,
+    node: true
   },
   extends: 'airbnb-base',
   // required to lint *.js files
