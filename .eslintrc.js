@@ -29,6 +29,8 @@ module.exports = {
   },
   // add your custom rules here
   'rules': {
+    'no-undefined': 'warn',
+    'no-unused-vars': ['warn', { vars: 'local', args: 'after-used', ignoreRestSiblings: true }],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
