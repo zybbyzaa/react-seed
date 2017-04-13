@@ -25,7 +25,7 @@ export default class App extends Component {
           />
           <Route
             exact path={'/home'}
-            render={(props) => { return <LazyRoute {...props} component={import('./Home')} /> }}
+            render={(props) => { return <LazyRoute {...props} component={import('./Home') } /> }}
           />
         </div>
       </Router>
