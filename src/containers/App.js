@@ -21,11 +21,11 @@ export default class App extends Component {
       <Router>
         <div className="app-wrapper">
           <Route exact path={'/'}
-            render={(props) => { return <Redirect to={'/home'} /> }}
+            render={props => <Redirect to={'/home'} />}
           />
           <Route
             exact path={'/home'}
-            render={(props) => { return <LazyRoute {...props} component={import('./Home') } /> }}
+            render={props => <LazyRoute {...props} component={import('./Home') } />}
           />
         </div>
       </Router>

@@ -29,15 +29,6 @@ module.exports = {
   },
   // add your custom rules here
   'rules': {
-    // don't require .js extension when importing
-    'import/extensions': ['error', 'always', {
-      'js': 'never'
-    }],
-    "no-unused-vars": ["off"],
-    "class-methods-use-this": ["off"],
-    "semi": ["error", "always", { "omitLastInOneLineBlock": true}],
-    "no-unused-expressions": ["off"],
-    "arrow-body-style": ["error", "always"],
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
