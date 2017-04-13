@@ -11,6 +11,21 @@ module.exports = {
         port: 8090,
         autoOpenBrowser: true,
         assetsPublicPath: '/',
+        /**
+         * http代理配置
+         * @link https://www.npmjs.com/package/http-proxy-middleware
+         * @example
+         * proxyTable: {
+         *  context: ['/api'],
+         *  options: {
+         *    target: "hostname",
+         *    changeOrigin: true,
+         *    pathRewrite: {
+         *      "^/api": "/api/aa"
+         *    }
+         *  }
+         * }
+         */
         proxyTable: {
         },
         template: path.join(__dirname, './tpl/dev.template.html')
@@ -24,7 +39,9 @@ module.exports = {
         template: path.join(__dirname, './tpl/prod.template.html'),
         bundleAnalyzerReport: process.env.npm_config_report
     },
+    // npm别名配置
     npmAlias: {
+      // aliasName: aliasPath
     },
-    projectDir: 'E:/mobxDemo/'
+    projectDir: 'path/to/project'
 }

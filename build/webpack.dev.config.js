@@ -27,7 +27,7 @@ module.exports = merge(baseWebpackConfig, {
                         loader: 'url',
                         options: {
                             name: utils.assetsPath('images','[name].[hash].[ext]'),
-                            publicPath: '/',
+                            publicPath: config.dev.assetsPublicPath,
                             limit: 8192
                         }
                     }
@@ -37,14 +37,15 @@ module.exports = merge(baseWebpackConfig, {
     },
     plugins: [
         new webpack.DefinePlugin({
-            'process.env': config.dev.env,
-            '_ENV_': JSON.stringify('DEV')
+          'process.env': config.dev.env,
+          '_ENV_': JSON.stringify('DEV')
         }),
         new HtmlWebpackPlugin({
         	filename: 'index.html',
         	inject: false,
-            chunks: ['manifest','vendor',config.appName],
-            template: config.dev.template
+          chunks: ['manifest','vendor',config.appName],
+          template: config.dev.template,
+          title: 'react app'
         }),
         new webpack.HotModuleReplacementPlugin()
     ]

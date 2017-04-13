@@ -43,7 +43,7 @@ const postcssConfig = {
     hooks: {
         onUpdateRule: function (rule, comment, image) {
           var spriteUrl = image.spritePath.replace('dist','');
-          image.spriteUrl = spriteUrl;
+          image.spriteUrl = process.argv[2] === '--local' ? spriteUrl : `/game-web-site${spriteUrl}`;
           return spritesOnUpdateRule(true, rule, comment, image);
         },
         onSaveSpritesheet: function(opts, groups) {
@@ -81,7 +81,7 @@ function spritesOnSaveSpritesheet(isDev, opts, groups) {
 
 module.exports = {
     assetsPath: function(_dir,_path) {
-        return path.join(_dir,config.appName,_path)
+        return `${_dir}/${config.appName}/${_path}`
     },
     postcssOption: function(){
         return [

@@ -10,7 +10,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpackConfig = merge(baseWebpackConfig, {
     devtool: '#cheap-module-source-map',
     entry: {
-        [config.appName]: config.entry,
+        [config.appName]: [
+          'es6-promise/auto',
+          config.entry
+        ],
         vendor: ['react', 'react-dom','react-router-dom']
     },
     output: {
@@ -27,7 +30,7 @@ var webpackConfig = merge(baseWebpackConfig, {
                         loader: 'url',
                         options: {
                             name: utils.assetsPath('images','[name].[hash].[ext]'),
-                            publicPath: '/',
+                            publicPath: config.build.assetsPublicPath,
                             limit: 8192
                         }
                     },

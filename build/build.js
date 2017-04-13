@@ -2,6 +2,7 @@ process.env.NODE_ENV = 'production';
 
 const ora = require('ora');
 const rm = require('rimraf');
+const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const webpack = require('webpack');
@@ -25,9 +26,12 @@ rm(path.join(config.build.assetsRoot), err => {
     }) + '\n\n');
 
     console.log(chalk.cyan('  Build complete.\n'));
-    console.log(chalk.yellow(
-      '  Tip: built files are meant to be served over an HTTP server.\n' +
-      '  Opening index.html over file:// won\'t work.\n'
-    ));
+    const spinnerCopy = ora('Copy to workdir');
+    spinnerCopy.start();
+    fs.copy('./dist', config.projectDir, err => {
+      spinnerCopy.stop();
+      if (err) return console.error(err)
+      console.log(chalk.yellow('  Copy complete.\n'));
+    });
   })
 })

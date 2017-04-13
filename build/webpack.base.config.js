@@ -72,7 +72,7 @@ module.exports = {
     },
     plugins: [
         new webpack.NoEmitOnErrorsPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({ 
+        new webpack.optimize.CommonsChunkPlugin({
             name: ['vendor','manifest']
         }),
         new ExtractTextPlugin({
