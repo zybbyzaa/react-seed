@@ -31,6 +31,15 @@ module.exports = {
   'rules': {
     'no-undefined': 'warn',
     'no-unused-vars': ['warn', { vars: 'local', args: 'after-used', ignoreRestSiblings: true }],
+    'import/prefer-default-export': 'off',
+    "comma-dangle": [1, "never"],
+    "no-undef": "off",
+    "no-restricted-syntax": ["error", "WithStatement"],
+    "no-unused-expressions": ["warn"],
+    "class-methods-use-this": ["off"],
+    "global-require": "warn",
+    "no-script-url": "warn",
+    "no-nested-ternary": "off",
     // allow debugger during development
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
   }
