@@ -28,13 +28,9 @@ compiler.plugin('compilation', function (compilation) {
   });
 });
 
-Object.keys(proxyTable).forEach(function (context) {
-  const options = proxyTable[context];
-  if (typeof options === 'string') {
-    options = { target: options }
-  }
-  app.use(proxyMiddleware(options.filter || context, options));
-})
+if (proxyTable.context) {
+  app.use(proxyMiddleware(proxyTable.context, proxyTable.options));
+}
 
 app.use(require('connect-history-api-fallback')());
 app.use(devMiddleware);
